@@ -1,0 +1,22 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Inception",
+      "year": 2010,
+      "rating": 8.8,
+      "poster": "assets/posters/inception.jpg",
+      "genres": ["Action", "Sci-Fi"],
+      "description": "A thief who steals secrets through dream-sharing technology."
+    },
+    {
+      "id": 2,
+      "title": "The Matrix",
+      "year": 1999,
+      "rating": 8.7,
+      "poster": "assets/posters/matrix.jpg",
+      "genres": ["Action", "Sci-Fi"],
+      "description": "A hacker discovers the shocking truth about his reality."
+    }
+  ]
+}
