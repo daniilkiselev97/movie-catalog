@@ -1,1 +1,11 @@
-<p>movie-list works!</p>
+<section class="movie-list">
+  <h1>Каталог фильмов</h1>
+  <div class="grid">
+    <article *ngFor="let movie of movies">
+      <img [src]="movie.poster" [alt]="movie.title" />
+      <h2>{{ movie.title }}</h2>
+      <p>{{ movie.year }}</p>
+    </article>
+  </div>
+  <input type="search" [formControl]="search" placeholder="Поиск по названию">
+</section>
