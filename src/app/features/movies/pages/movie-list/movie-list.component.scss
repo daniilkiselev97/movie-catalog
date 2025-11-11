@@ -1,70 +1,61 @@
 .movie-list {
   padding: 1.5rem;
+  position: relative;
 
-  h1 {
-    text-align: center;
-    margin-bottom: 2rem;
+  .search-input {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    max-width: 250px;
   }
 
-  .search-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 2rem;
-
-    input {
-      padding: 0.6rem 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-      width: 250px;
-      transition: all 0.3s ease;
-
-      &:focus {
-        outline: none;
-        border-color: #007bff;
-        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
-      }
+  @media (max-width: 768px) {
+    .search-input {
+      position: static;
+      display: block;
+      margin: 1rem auto 1.5rem;
+      width: 90%;
+      max-width: none;
     }
   }
 
   .movie-grid {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 
-  .movie-item {
-    text-align: center;
-  }
+    .movie-item {
+      cursor: pointer;
+      transition: transform 0.2s ease;
 
-  .movie-card {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-    background: #fff;
+      &:hover {
+        transform: scale(1.03);
+      }
 
-    &:hover {
-      transform: translateY(-4px);
+      .movie-card {
+        .movie-poster {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+          border-radius: 12px;
+          display: block;
+        }
+      }
+
+      .movie-title {
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
+        text-align: center;
+      }
+
+      .movie-year {
+        text-align: center;
+        color: #777;
+      }
     }
-  }
-
-  .movie-poster {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-  }
-
-  .movie-title {
-    margin-top: 0.75rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-
-  .movie-year {
-    color: #777;
-    font-size: 0.9rem;
-    margin-top: 0.25rem;
   }
 }

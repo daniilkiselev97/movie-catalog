@@ -1,1 +1,24 @@
-<p>movie-detail works!</p>
+<div class="modal-backdrop" (click)="onClose()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="onClose()">×</button>
+
+    <img [src]="movie.poster" [alt]="movie.title" class="modal-poster" />
+
+    <h2 class="modal-title">{{ movie.title }}</h2>
+    <p class="modal-year">{{ movie.year }}</p>
+
+    <div class="modal-genres">
+      <span *ngFor="let genre of movie.genres">{{ genre }}</span>
+    </div>
+
+    <p class="modal-description">
+      {{
+        movie.description.length > 200
+          ? (movie.description | slice : 0 : 200) + "..."
+          : movie.description
+      }}
+    </p>
+
+    <div class="modal-rating">⭐ {{ movie.rating }}</div>
+  </div>
+</div>

@@ -13,6 +13,7 @@ export class MovieListComponent implements OnInit {
   public allMovies: Movie[] = [];
   public movies: Movie[] = []
   public search = new FormControl('')
+  public selectedMovie: Movie | null = null;
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
@@ -26,5 +27,13 @@ export class MovieListComponent implements OnInit {
       const term = value?.trim().toLowerCase();
       this.movies = term ? this.allMovies.filter(m => m.title.toLowerCase().includes(term)) : this.allMovies
     })
+  }
+
+  public openModal(movie: Movie) {
+    this.selectedMovie = movie;
+  }
+
+  public closeModal() {
+    this.selectedMovie = null;
   }
 }

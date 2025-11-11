@@ -1,16 +1,19 @@
 <section class="movie-list">
   <h1>Каталог фильмов</h1>
 
-  <div class="search-wrapper">
-    <input
-      type="search"
-      [formControl]="search"
-      placeholder="Поиск по названию"
-    />
-  </div>
+  <input
+    type="search"
+    [formControl]="search"
+    placeholder="Поиск по названию"
+    class="search-input"
+  />
 
   <div class="movie-grid">
-    <div class="movie-item" *ngFor="let movie of movies">
+    <div
+      class="movie-item"
+      *ngFor="let movie of movies"
+      (click)="openModal(movie)"
+    >
       <article class="movie-card">
         <img [src]="movie.poster" [alt]="movie.title" class="movie-poster" />
       </article>
@@ -18,4 +21,10 @@
       <p class="movie-year">{{ movie.year }}</p>
     </div>
   </div>
+
+  <app-movie-detail
+    *ngIf="selectedMovie"
+    [movie]="selectedMovie"
+    (close)="closeModal()"
+  ></app-movie-detail>
 </section>

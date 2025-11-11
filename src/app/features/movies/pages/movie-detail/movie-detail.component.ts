@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Movie } from 'src/app/movies.model';
 
 @Component({
   selector: 'app-movie-detail',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class MovieDetailComponent {
 
+  @Input() movie!: Movie;
+  @Output() close = new EventEmitter<void>();
+
+  onClose() {
+    this.close.emit();
+  }
 }
