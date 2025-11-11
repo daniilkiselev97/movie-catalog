@@ -1,0 +1,117 @@
+Ключевые принципы ООП:
+- Наследование
+- Полиморфизм
+- Инкапсуляция
+- Абстракция
+
+ 1. Наследование
+
+ Идея: Новый класс (дочерний) может наследовать свойства и методы другого класса (родительского).
+ Это помогает переиспользовать код.
+
+ class Human {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  speak() {
+    console.log('I can speak');
+  }
+}
+
+class Developer extends Human {
+  constructor(firstName, lastName) {
+    super(firstName, lastName); // <- вызываем constructor родителького класса
+  }
+
+  writeCode() {
+    console.log('I can write code');
+  }
+}
+
+const developer = new Developer('John', 'Smith');
+developer.speak();
+developer.writeCode();
+
+2. Полиморфизм (много форм)
+
+Идея: Способность объекта использовать методы с одинаковым названием, но разным поведением.
+В JavaScript это реализуется через переопределение методов в дочерних классах.
+
+class User {
+  constructor(username, email) {
+    this.username = username;
+    this.email = email;
+  }
+
+  view() {
+    console.log('Я могу просматривать основной контент сайта');
+  }
+}
+
+class Admin extends User {
+  constructor(username, email) {
+    super(username, email);
+    this.isAdmin = true;
+  }
+
+  view() {
+    super.view();
+    console.log('А также я могу иметь доступ к админ панели');
+  }
+}
+
+ 3. Инкапсуляция
+
+ Идея: Ограничение доступа к внутренним данным объекта, предоставляя интерфейсы для их изменения.
+ JavaScript позволяет реализовать это через private поля (с помощью #) или замыкания.
+
+ class CoffeeMachine {
+  #waterAmount = 0;  приватное свойство (ES2020)
+
+  setWater(amount) { //инкапсуляция
+    if (amount < 0) throw new Error('Water must be positive');
+    this.#waterAmount = amount;
+  }
+
+  brew() {
+    console.log(`Brewing with ${this.#waterAmount} ml of water...`);
+    this._heatWater(); //абстракция
+    // ...
+  }
+
+  _heatWater() {
+    console.log("Heating water...");
+  }
+}
+
+const coffeeMachine = new CoffeeMachine();
+
+coffeeMachine.setWater(200);
+coffeeMachine.brew();
+coffeeMachine.#waterAmount; // Error
+
+ 4. Абстракция (плотно связан с инкапсуляцией)
+
+ Идея: Скрытие сложной реализации за простым интерфейсом.
+ В JavaScript это достигается с помощью классов и методов, которые предоставляют только нужную информацию.
+
+ class Car {
+  start() {
+    this._checkSystems();
+    this._igniteEngine();
+    console.log('Машина запущена!');
+  }
+
+  _checkSystems() {
+    console.log('Проверка систем...');
+  }
+
+  _igniteEngine() {
+    console.log('Запуск двигателя...');
+  }
+}
+
+const car = new Car()
+car.start();

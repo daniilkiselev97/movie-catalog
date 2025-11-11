@@ -1,0 +1,24 @@
+Изначально у промиса есть два состояния {state: "pending",result: undefined}
+Далее, когда resolve(value) -> {state: "fulfilled", result: value}
+Если , завершился с ошибкой , то -> {state: "rejected", result: error}
+
+let promise = new Promise(function(resolve, reject) {
+  resolve()
+});
+
+let promise = new Promise(function(resolve, reject) {
+  reject(new Error("Ошибка")))
+});
+
+Промисы позволяют обрабатывать асинхронный код, избавляясь от колбэк-хэллов
+
+Асинхронный код также можно обрабатывать асинхронными функциями ("Синтаксический сахар над промисами")
+
+async function f() {
+  return Promise.resolve(1);
+}
+f().then(alert); // 1
+
+Асинхронная функция всегда возвращает промис
+
+В EventLoop промисы попадают в микротаски, они более приоритетные , чем макротаски (SetTimeout...)
