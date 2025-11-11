@@ -10,20 +10,21 @@ import { Movie } from 'src/app/movies.model';
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
+  public allMovies: Movie[] = [];
   public movies: Movie[] = []
   public search = new FormControl('')
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
     this.movieService.getMovies().subscribe(data => {
+      this.allMovies = data
       this.movies = data
     })
     this.search.valueChanges.pipe(
       debounceTime(300)
     ).subscribe(value => {
-      this.movies = this.movies.filter(m => {
-        m.title.toLowerCase().includes(value!.toLowerCase())
-      })
+      const term = value?.trim().toLowerCase();
+      this.movies = term ? this.allMovies.filter(m => m.title.toLowerCase().includes(term)) : this.allMovies
     })
   }
 }

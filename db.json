@@ -2,21 +2,93 @@
   "movies": [
     {
       "id": 1,
-      "title": "Inception",
+      "title": "Начало",
       "year": 2010,
-      "rating": 8.8,
-      "poster": "assets/posters/inception.jpg",
-      "genres": ["Action", "Sci-Fi"],
-      "description": "A thief who steals secrets through dream-sharing technology."
+      "poster": "assets/images/inception.jpg"
     },
     {
       "id": 2,
-      "title": "The Matrix",
+      "title": "Интерстеллар",
+      "year": 2014,
+      "poster": "assets/images/interstellar.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Тёмный рыцарь",
+      "year": 2008,
+      "poster": "assets/images/dark_king.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Аватар",
+      "year": 2009,
+      "poster": "assets/images/avatar.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Гарри Поттер и философский камень",
+      "year": 2001,
+      "poster": "assets/images/Harry_Potter_and_the_Philosopher's_Stone.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Гарри Поттер и тайная комната",
+      "year": 2002,
+      "poster": "assets/images/Harry_Potter_and_the_Chamber_of_Secrets.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Гарри Поттер и узник Азкабана",
+      "year": 2004,
+      "poster": "assets/images/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Гарри Поттер и кубок огня",
+      "year": 2005,
+      "poster": "assets/images/Harry_Potter_and_the_Goblet_of_Fire.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Гарри Поттер и Орден Феникса",
+      "year": 2007,
+      "poster": "assets/images/Harry_Potter_and_the_Order_of_the_Phoenix.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Гарри Поттер и Дары Смерти. Часть 2",
+      "year": 2011,
+      "poster": "assets/images/Harry_Potter_and_the_Deathly_Hallows._Part_2.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Матрица",
       "year": 1999,
-      "rating": 8.7,
-      "poster": "assets/posters/matrix.jpg",
-      "genres": ["Action", "Sci-Fi"],
-      "description": "A hacker discovers the shocking truth about his reality."
+      "poster": "assets/images/matrix.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Джокер",
+      "year": 2019,
+      "poster": "assets/images/joker.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Паразиты",
+      "year": 2019,
+      "poster": "assets/images/parasites.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Гладиатор",
+      "year": 2000,
+      "poster": "assets/images/gladiatorteaser.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Форрест Гамп",
+      "year": 1994,
+      "poster": "assets/images/forest_gamp.jpg"
     }
   ]
 }

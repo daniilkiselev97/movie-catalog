@@ -1,11 +1,21 @@
 <section class="movie-list">
   <h1>Каталог фильмов</h1>
-  <div class="grid">
-    <article *ngFor="let movie of movies">
-      <img [src]="movie.poster" [alt]="movie.title" />
-      <h2>{{ movie.title }}</h2>
-      <p>{{ movie.year }}</p>
-    </article>
+
+  <div class="search-wrapper">
+    <input
+      type="search"
+      [formControl]="search"
+      placeholder="Поиск по названию"
+    />
   </div>
-  <input type="search" [formControl]="search" placeholder="Поиск по названию">
+
+  <div class="movie-grid">
+    <div class="movie-item" *ngFor="let movie of movies">
+      <article class="movie-card">
+        <img [src]="movie.poster" [alt]="movie.title" class="movie-poster" />
+      </article>
+      <h2 class="movie-title">{{ movie.title }}</h2>
+      <p class="movie-year">{{ movie.year }}</p>
+    </div>
+  </div>
 </section>
