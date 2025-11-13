@@ -11,7 +11,7 @@
   <div class="movie-grid">
     <div
       class="movie-item"
-      *ngFor="let movie of movies"
+      *ngFor="let movie of movies$ | async"
       (click)="openModal(movie)"
     >
       <article class="movie-card">
